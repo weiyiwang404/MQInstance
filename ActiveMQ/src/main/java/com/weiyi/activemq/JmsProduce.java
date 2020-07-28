@@ -1,4 +1,4 @@
-package com.weiyi.mq;
+package com.weiyi.activemq;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -35,7 +35,7 @@ public class JmsProduce {
         // 5 创建消息的生产者
         MessageProducer messageProducer = session.createProducer(queue);
         // 6 通过messageProducer 生产 3 条 消息发送到消息队列中
-        for (int i = 1; i < 4; i++) {
+        for (int i = 1; i <= 6; i++) {
             // 7  创建消息
             TextMessage textMessage = session.createTextMessage("msg--" + i);
             // 8  通过messageProducer发送给mq
